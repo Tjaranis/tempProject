@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DataAccessLayer.PersistenceModels
 {
-    public partial class Answer
+    internal partial class Answer
     {
         public int PostId { get; set; }
         public int? ParentId { get; set; }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DataAccessLayer.PersistenceModels
 {
-    public partial class Tag
+    internal partial class Tag
     {
         public Tag()
         {

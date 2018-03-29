@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DataAccessLayer.PersistenceModels
 {
-    public partial class StackOverflowUser
+    internal partial class StackOverflowUser
     {
         public StackOverflowUser()
         {

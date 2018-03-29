@@ -29,7 +29,7 @@ namespace ServiceLayer.BusinessLayer
         /// <param name="exception"> Optional: a exception which was caught during a specific execution of a procedure. </param>
         public void LogApplicationError(string comment, string occurredWithin, Exception exception = null)
         {
-
+            
             _unitOfWork.Complete();
         }
 

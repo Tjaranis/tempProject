@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DataAccessLayer.PersistenceModels
 {
-    public partial class Bookmark
+    internal partial class Bookmark
     {
         public int UserId { get; set; }
         public int PostId { get; set; }

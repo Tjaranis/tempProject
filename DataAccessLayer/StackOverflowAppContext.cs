@@ -11,20 +11,20 @@ namespace DataAccessLayer
     public partial class StackOverflowAppContext: DbContext
     {
 
-        public virtual DbSet<Answer> Answer { get; set; }
-        public virtual DbSet<Bookmark> Bookmark { get; set; }
-        public virtual DbSet<ErrorLog> ErrorLog { get; set; }
-        public virtual DbSet<Note> Note { get; set; }
-        public virtual DbSet<Post> Post { get; set; }
-        public virtual DbSet<PostComment> PostComment { get; set; }
-        public virtual DbSet<PostLink> PostLink { get; set; }
-        public virtual DbSet<PostTag> PostTag { get; set; }
-        public virtual DbSet<PostType> PostType { get; set; }
-        public virtual DbSet<Question> Question { get; set; }
-        public virtual DbSet<SearchHistory> SearchHistory { get; set; }
-        public virtual DbSet<StackOverflowUser> StackOverflowUser { get; set; }
-        public virtual DbSet<Tag> Tag { get; set; }
-        public virtual DbSet<UserSearchHistory> UserSearchHistory { get; set; }
+        internal virtual DbSet<Answer> Answer { get; set; }
+        internal virtual DbSet<Bookmark> Bookmark { get; set; }
+        internal virtual DbSet<ErrorLog> ErrorLog { get; set; }
+        internal virtual DbSet<Note> Note { get; set; }
+        internal virtual DbSet<Post> Post { get; set; }
+        internal virtual DbSet<PostComment> PostComment { get; set; }
+        internal virtual DbSet<PostLink> PostLink { get; set; }
+        internal virtual DbSet<PostTag> PostTag { get; set; }
+        internal virtual DbSet<PostType> PostType { get; set; }
+        internal virtual DbSet<Question> Question { get; set; }
+        internal virtual DbSet<SearchHistory> SearchHistory { get; set; }
+        internal virtual DbSet<StackOverflowUser> StackOverflowUser { get; set; }
+        internal virtual DbSet<Tag> Tag { get; set; }
+        internal virtual DbSet<UserSearchHistory> UserSearchHistory { get; set; }
 
 
 
