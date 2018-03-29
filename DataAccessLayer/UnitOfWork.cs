@@ -1,6 +1,7 @@
 ﻿
 
 using DataAccessLayer.Interfaces;
+using DataAccessLayer.Repositories;
 using System;
 using System.IO;
 
@@ -10,6 +11,7 @@ namespace DataAccessLayer
     {
         private StackOverflowAppContext _context;
         /***  IRepositories here  ***/
+        public IErrorLogRepository ErrorLogs { get; set; }
 
 
         /// <summary> Instantiate a EF-Context and then use it across all repositories.  </summary>
@@ -17,6 +19,7 @@ namespace DataAccessLayer
         public UnitOfWork(StackOverflowAppContext context)
         {
             _context = context;
+            ErrorLogs = new ErrorLogRepository(_context);
         }
 
 
@@ -29,7 +32,13 @@ namespace DataAccessLayer
             }
             catch (Exception ex)
             {
-                //ToDo log error
+                ErrorLogs.Log(new DataTransferObjects.BusinessDataAccessDTOs.LoggingDTO
+                {
+                    AppLocation = "UnitOfWork - Complete()",
+                    DeveloperComment = "Unit of Work could not commit any current changes to the DB sets ",
+                    ExceptionMessage = ex.Message,
+                    ExceptionStacktrace = ex.StackTrace
+                });
                 return -1;
             }
         }

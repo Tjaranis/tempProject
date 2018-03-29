@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using DataAccessLayer.Interfaces;
 // using ServiceLayer.ViewModels;
-// using DataTransferObjects;
+ using DataTransferObjects.BusinessDataAccessDTOs;
 
 namespace ServiceLayer.BusinessLayer
 {
@@ -23,14 +23,23 @@ namespace ServiceLayer.BusinessLayer
         }
 
 
+
         /// <summary> Log an error/exception which occurred within the system </summary>
         /// <param name="comment"> Any additional description or developer comment to describe the error. </param>
         /// <param name="occurredWithin"> Should describe specifically where the error occurred. </param>
         /// <param name="exception"> Optional: a exception which was caught during a specific execution of a procedure. </param>
         public void LogApplicationError(string comment, string occurredWithin, Exception exception = null)
         {
-            
-            _unitOfWork.Complete();
+            LoggingDTO dto = new LoggingDTO
+            {
+                DeveloperComment = comment,
+                AppLocation = occurredWithin,
+                ExceptionMessage = exception?.Message,
+                ExceptionStacktrace = exception?.StackTrace
+            };
+
+            var r = _unitOfWork.ErrorLogs.Log(dto);
+            if(r) _unitOfWork.Complete();
         }
 
     }

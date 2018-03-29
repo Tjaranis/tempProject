@@ -1,15 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
+﻿
+using System;
 
-namespace DataAccessLayer.PersistenceModels
+namespace DataTransferObjects.BusinessDataAccessDTOs
 {
-    internal partial class ErrorLog
+    public class LoggingDTO
     {
         public int Id { get; set; }
-        public DateTime DateOccurred { get; set; } = DateTime.Now;
+        public DateTime DateOccurred { get; set; }
         public string AppLocation { get; set; }
         public string ExceptionMessage { get; set; } = null;
         public string ExceptionStacktrace { get; set; } = null;
         public string DeveloperComment { get; set; }
     }
+
 }
