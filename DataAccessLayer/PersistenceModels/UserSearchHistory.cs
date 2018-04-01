@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DataAccessLayer.PersistenceModels
 {
-    internal partial class UserSearchHistory
+    public class UserSearchHistory
     {
         public string SearchText { get; set; }
         public int UserId { get; set; }

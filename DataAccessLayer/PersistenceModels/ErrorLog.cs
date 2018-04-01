@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DataAccessLayer.PersistenceModels
 {
-    internal partial class ErrorLog
+    public class ErrorLog
     {
         public int Id { get; set; }
         public DateTime DateOccurred { get; set; } = DateTime.Now;

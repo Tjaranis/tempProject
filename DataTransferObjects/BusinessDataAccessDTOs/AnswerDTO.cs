@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
-namespace DataAccessLayer.PersistenceModels
+namespace DataTransferObjects.BusinessDataAccessDTOs
 {
-    public class Answer
+    public class AnswerDTO
     {
         public int PostId { get; set; }
         public int? ParentId { get; set; }
         public Int16? AcceptedAnswer { get; set; }
         public Int16? Editable { get; set; }
 
-        public Post Parent { get; set; }
+        public PostDTO Parent { get; set; }
     }
 }
