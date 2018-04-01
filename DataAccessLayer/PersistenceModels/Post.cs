@@ -26,11 +26,11 @@ namespace DataAccessLayer.PersistenceModels
         public PostType PostTypeNavigation { get; set; }
         public StackOverflowUser User { get; set; }
         public Question Question { get; set; }
-        public ICollection<Answer> Answer { get; set; }
-        public ICollection<Bookmark> Bookmark { get; set; }
-        public ICollection<Note> Note { get; set; }
-        public ICollection<PostComment> PostComment { get; set; }
-        public ICollection<PostLink> PostLink { get; set; }
-        public ICollection<PostTag> PostTag { get; set; }
+        public IEnumerable<Answer> Answer { get; set; }
+        public IEnumerable<Bookmark> Bookmark { get; set; }
+        public IEnumerable<Note> Note { get; set; }
+        public IEnumerable<PostComment> PostComment { get; set; }
+        public IEnumerable<PostLink> PostLink { get; set; }
+        public IEnumerable<PostTag> PostTag { get; set; }
     }
 }

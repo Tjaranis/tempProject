@@ -14,9 +14,5 @@ namespace DataAccessLayer.Interfaces
         bool Update(int post_id, int parent_id, bool accepted_answer, bool editable);
         bool Delete(int post_id);
         
-        /*****   CCS: assignment 4.1   *****/
-        // Category GetCategory(int categoryID);
-        // IEnumerable<Category> GetCategories();
-        // Category CreateCategory(string name, string description);
     }
 }
