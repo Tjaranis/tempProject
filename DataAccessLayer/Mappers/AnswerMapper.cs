@@ -13,7 +13,7 @@ namespace DataAccessLayer.Mappers
             if (a == null || a.PostId <= 0)
                 return null;
             return CreatedAnswerDTO(a);
-        }ICollection<Answer>
+        }
         
         internal static IEnumerable<AnswerDTO> MapAnswerToAnswerDTOs(IEnumerable<Answer> aList)
         {
